@@ -1,41 +1,78 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ==============================================================================
+# MeetTrack AI — Git Ignore Rules for Clean & Secure Git Push
+# ==============================================================================
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Dependencies
+node_modules/
+**/node_modules/
+.pnp
+.pnp.js
 
-# testing
-/coverage
+# Build Outputs & Compilations
+dist/
+**/dist/
+.next/
+**/.next/
+out/
+build/
+coverage/
 
-# next.js
-/.next/
-/out/
+# Environment Variables & Secrets (Keep .env.example)
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+**/.env*
+!**/.env.example
+!**/.env.*.example
 
-# production
-/build
+# Local SQLite Databases & Data Files
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+data/
+**/data/
+!backend/data/.gitkeep
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs & Debugging
+logs/
+*.log
+**/*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
+# Cache, Turbopack & Temporary Artifacts
+.turbo/
+.cache/
 *.tsbuildinfo
 next-env.d.ts
+**/next-env.d.ts
+*.tmp
+*.temp
+*.zip
+*.tar.gz
+*.bak
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor & IDE Directories
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
