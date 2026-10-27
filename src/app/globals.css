@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-subtle: #f1f5f9;
+  --border: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --accent-cyan: #06b6d4;
+  --accent-indigo: #6366f1;
+}
+
+[data-theme="dark"],
+.dark {
+  --background: #0b1120;
+  --surface: #111827;
+  --surface-subtle: #172033;
+  --border: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --primary: #60a5fa;
+  --primary-light: #1e293b;
+  --accent-cyan: #22d3ee;
+  --accent-indigo: #818cf8;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Minimal Selection */
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+  color: inherit;
+}
+
+/* Print styling for clean PDF export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+  .print-avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
